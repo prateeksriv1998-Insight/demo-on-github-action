@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "hJ04CwoUNxOI6TbhgmvE3m+GxiWKv1qULZKMC9G+/q4=",
+  "Source": "demo-backend-on-github-action",
+  "BasePath": "_content/demo-backend-on-github-action",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
