@@ -21,13 +21,13 @@ jobs:
          dotnet-version: '8.x'
 
      - name : restore
-       run : dotnet restore ././*.sln
+       run : dotnet restore ./*.sln
 
      - name : dotnet build
-       run : dotnet build ././*.sln --configuration Release --no-restore
+       run : dotnet build ./*.sln --configuration Release --no-restore
 
      - name : dotnet publish
-       run : dotnet publish ././*.sln --configuration Release --no-build --output "${{ env.Azure_WebApp_Package_Path }}"
+       run : dotnet publish ./*.sln --configuration Release --no-build --output "${{ env.Azure_WebApp_Package_Path }}"
 
      - name : Deploy
        uses : azure/webapps-deploy@v2
