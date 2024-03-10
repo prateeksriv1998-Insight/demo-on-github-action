@@ -1,0 +1,40 @@
+name: demo-backend.yml
+on: 
+  push:
+    branches:
+    - main
+
+env:
+  Azure_WebApp_Name : demo-backend-weapi
+  Azure_WebApp_Package_Path : demo
+
+jobs:
+ publish: 
+   runs-on: ubuntu-latest
+
+   steps:
+     - uses: actions/checkout@v3
+     
+     - name: Setup .NET
+       uses: actions/Setup-dotnet@v3
+       with:
+         dotnet-version: '8.x'
+
+     - name : restore
+       run : dotnet restore ./*.sln
+
+     - name : dotnet build
+       run : dotnet build ./*.sln --configuration Release --no-restore
+
+     - name : dotnet publish
+       run : dotnet publish ./*.sln --configuration Release --no-build --output "${{ env.Azure_WebApp_Package_Path }}"
+
+     - name : Deploy
+       uses : azure/webapps-deploy@v2
+       with :
+         app-name : ${{ env.Azure_WebApp_Name }}
+         publish-profile: "${{ secrets.new_secret }}"
+         package: "${{ env.Azure_WebApp_Package_Path }}"
+
+
+     
