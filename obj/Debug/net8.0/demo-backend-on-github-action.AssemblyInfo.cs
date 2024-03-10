@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("demo-backend-on-github-action")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+985e6e721b354386796fc3f51aa5a42da3d0d063")]
 [assembly: System.Reflection.AssemblyProductAttribute("demo-backend-on-github-action")]
 [assembly: System.Reflection.AssemblyTitleAttribute("demo-backend-on-github-action")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
